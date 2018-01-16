@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import json,pickle,pprint,re,sqlite3,sys,syslog,time
+import json,pickle,pprint,re,sqlite3,sys,time
 from collections import OrderedDict
 from operator import itemgetter
 from flask import Flask, render_template, request, send_from_directory, jsonify, redirect, url_for
@@ -7,9 +7,8 @@ from flask_caching import Cache
 import requests
 import xmrfmt
 
-
-daemon_host='127.0.0.1'
-daemon_port=18081
+daemon_host='46.101.40.29'
+daemon_port=24091
 url = "http://" + daemon_host + ":" + str(daemon_port) + "/json_rpc"
 id = '42'
 
@@ -23,7 +22,7 @@ def is_hex(s):
 
 def getTX(txid):
     try:
-        url = 'http://127.0.0.1:18081/gettransactions'
+        url = 'http://46.101.40.29:24091/gettransactions'
         txPost = requests.post(url, data=json.dumps({'txs_hashes':[str(txid)],'decode_as_json': True}), headers={'content-type': 'application/json'})
         txResponse = txPost.json()['txs'][0]
         if txPost.status_code == 200:
@@ -37,7 +36,7 @@ def getTX(txid):
 
 def getTXPool():
     try:
-        url = 'http://127.0.0.1:18081/get_transaction_pool'
+        url = 'http://46.101.40.29:24091/get_transaction_pool'
         txpoolPost = requests.post(url, headers={'content-type': 'application/json'})
         txpoolResponse = txpoolPost.json()
         if txpoolPost.status_code == 200:
