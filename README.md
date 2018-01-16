@@ -1,4 +1,4 @@
-xsrExplorer: A Simple Block Explorer for Mynt/CryptoNote based cryptocurrencies
+xsmExplorer: A Simple Block Explorer for Mynt/CryptoNote based cryptocurrencies
 =========================
 * Python 2.7+ is required.
 * Python 3.x is likely fine.  In fact, this code is a smaller version of what's running on https://explorer.myntpulse.com - which runs Python 3.5.
