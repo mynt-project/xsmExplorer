@@ -5,7 +5,7 @@ from operator import itemgetter
 from flask import Flask, render_template, request, send_from_directory, jsonify, redirect, url_for
 from flask_caching import Cache
 import requests
-import xmrfmt
+import xsmfmt
 
 daemon_host='localhost'
 daemon_port=24091
