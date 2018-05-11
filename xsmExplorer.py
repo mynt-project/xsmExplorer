@@ -111,10 +111,10 @@ def block(block):
         #print(type(blockData))
         try:
             blockData['block_header']['timestamp'] = time.strftime("%d %b %Y %H:%M:%S", time.gmtime(blockData['block_header']['timestamp']))
-            blockData['block_header']['reward'] = float("{:.8f}".format(xmrfmt.AmountToString(blockData['block_header']['reward'])))
+            blockData['block_header']['reward'] = float("{:.2f}".format(xmrfmt.AmountToString(blockData['block_header']['reward'])))
         except:
-            blockData['block_header']['timestamp'] = "Err!"
-            blockData['block_header']['reward'] = "Err!"
+            blockData['block_header']['timestamp'] = "Undisclosed by node"
+            blockData['block_header']['reward'] = "PRIVATE"
     except Exception as e:
         blockData = False
         print(str(e))
