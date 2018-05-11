@@ -8,7 +8,7 @@ import requests
 import xsmfmt
 
 daemon_host='localhost'
-daemon_port=24091
+daemon_port=28888
 url = "http://" + daemon_host + ":" + str(daemon_port) + "/json_rpc"
 id = '42'
 
@@ -22,7 +22,7 @@ def is_hex(s):
 
 def getTX(txid):
     try:
-        url = 'http://localhost:24091/gettransactions'
+        url = 'http://localhost:28888/gettransactions'
         txPost = requests.post(url, data=json.dumps({'txs_hashes':[str(txid)],'decode_as_json': True}), headers={'content-type': 'application/json'})
         txResponse = txPost.json()['txs'][0]
         if txPost.status_code == 200:
@@ -36,7 +36,7 @@ def getTX(txid):
 
 def getTXPool():
     try:
-        url = 'http://localhost:24091/get_transaction_pool'
+        url = 'http://localhost:28888/get_transaction_pool'
         txpoolPost = requests.post(url, headers={'content-type': 'application/json'})
         txpoolResponse = txpoolPost.json()
         if txpoolPost.status_code == 200:
