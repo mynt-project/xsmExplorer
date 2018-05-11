@@ -36,7 +36,7 @@ $(function() {
           <tr onclick="window.document.location='/block/{{ key['block_header']['height'] }}';" class="monoTableClickable"><td>{{key['block_header']['timestamp']}}</td><td>{{ key['block_header']['height'] }}</td><td>{{ key['tx_hashes']|length }}</td><td>{{ key['block_header']['hash'] }}</td></tr>
         {% endfor %}
         {% else %}
-          <tr><td>Err!</td><td>Err!</td><td>Err!</td><td>Err!</td></tr>
+          <tr><td>Private</td><td>Private</td><td>Private</td><td>Private</td></tr>
         {% endif %}
           </tbody>
         </table>  
