@@ -88,6 +88,6 @@ def AmountToString(amount):
   if amount == None:
     amount = 0
   lamount=int(amount)
-  samount = moneyfmt(Decimal(lamount)/Decimal(1e12),places=2)
+  samount = moneyfmt(Decimal(lamount)/Decimal(1e2),places=2)
   return Decimal(samount)
   #return samount
